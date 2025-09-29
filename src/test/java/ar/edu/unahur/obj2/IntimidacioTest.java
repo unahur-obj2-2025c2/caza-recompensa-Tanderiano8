@@ -2,6 +2,9 @@ package ar.edu.unahur.obj2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 import ar.edu.unahur.obj2.cazador.CazadorRural;
 import ar.edu.unahur.obj2.cazador.CazadorSigiloso;
@@ -15,8 +18,8 @@ public class IntimidacioTest {
         CazadorUrbano cazador = new CazadorUrbano(10);
         Profugo profugo = new Profugo(40, 50, true);
         cazador.intimida(profugo);
-        assertFalse(profugo.EstaNervioso());
-        assertEquals(Integer.valueOf(40), profugo.getInocencia());
+        assertFalse(profugo.estaNervioso());
+        assertEquals(Integer.valueOf(38), profugo.getInocencia());
     }
 
     @Test
@@ -24,8 +27,8 @@ public class IntimidacioTest {
         CazadorRural cazador = new CazadorRural(10);
         Profugo profugo = new Profugo(40, 50, false);
         cazador.intimida(profugo);
-        assertTrue(profugo.EstaNervioso());
-        assertEquals(Integer.valueOf(40), profugo.getInocencia());
+        assertTrue(profugo.estaNervioso());
+        assertEquals(Integer.valueOf(38), profugo.getInocencia());
     }
 
     @Test
@@ -33,9 +36,9 @@ public class IntimidacioTest {
         CazadorSigiloso cazador = new CazadorSigiloso(10);
         Profugo profugo = new Profugo(40, 50, false);
         cazador.intimida(profugo);
-        assertFalse(profugo.EstaNervioso());
-        assertEquals(Integer.valueOf(35), profugo.getHabilidad());
-        assertEquals(Integer.valueOf(40), profugo.getInocencia());
+        assertFalse(profugo.estaNervioso());
+        assertEquals(Integer.valueOf(45), profugo.getHabilidad());
+        assertEquals(Integer.valueOf(38), profugo.getInocencia());
     }
 
 }

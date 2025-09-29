@@ -17,7 +17,7 @@ public class ProfugoTest {
         Profugo profugo = new Profugo(50, 60, true);
         assertEquals(Integer.valueOf(50), profugo.getInocencia());
         assertEquals(Integer.valueOf(60), profugo.getHabilidad());
-        assertTrue(profugo.EstaNervioso());
+        assertTrue(profugo.estaNervioso());
 
     }
 
@@ -28,7 +28,7 @@ public class ProfugoTest {
         profugo.disminuirInocencia();
         assertEquals(Integer.valueOf(0), profugo.getInocencia());
         assertEquals(Integer.valueOf(30), profugo.getHabilidad());
-        assertTrue(profugo.EstaNervioso());
+        assertTrue(profugo.estaNervioso());
 
     }
 
@@ -39,7 +39,7 @@ public class ProfugoTest {
         profugo.disminuirHabilidad();
         assertEquals(Integer.valueOf(10), profugo.getInocencia());
         assertEquals(Integer.valueOf(0), profugo.getHabilidad());
-        assertTrue(profugo.EstaNervioso());
+        assertTrue(profugo.estaNervioso());
 
     }
 

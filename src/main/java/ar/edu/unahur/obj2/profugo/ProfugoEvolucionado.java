@@ -1,16 +1,16 @@
 package ar.edu.unahur.obj2.profugo;
 
-public class Profugo implements Profugable{
+public abstract class ProfugoEvolucionado implements Profugable {
 
     protected Integer inocencia;
     protected Integer habilidad;
     protected Boolean esNervioso;
+    private Profugable profugoPosible;
 
-    public Profugo(Integer inocencia, Integer habilidad, Boolean esNervioso) {
-        this.inocencia = inocencia;
-        this.habilidad = habilidad;
-        this.esNervioso = esNervioso;
+    public ProfugoEvolucionado(Profugable profugoPosible) {
+        this.profugoPosible = profugoPosible;
     }
+
     @Override
     public Integer getInocencia() {
         return this.inocencia;
@@ -40,6 +40,8 @@ public class Profugo implements Profugable{
         this.esNervioso = false;
     }
 
-   
+    protected abstract void duplicarHabilidad();
+
+    protected abstract void proteccionLegal();
 
 }
